@@ -122,13 +122,13 @@ variable "tunnel2_phase1_encryption_algorithms" {
 variable "tunnel1_phase1_integrity_algorithms" {
   description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
   type        = list(string)
-  default     = ["SHA-1", "SHA2-256", "SHA2-384", "SHA2-512"]
+  default     = ["SHA1", "SHA2-256", "SHA2-384", "SHA2-512"]
 }
 
 variable "tunnel2_phase1_integrity_algorithms" {
   description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
   type        = list(string)
-  default     = ["SHA-1", "SHA2-256", "SHA2-384", "SHA2-512"]
+  default     = ["SHA1", "SHA2-256", "SHA2-384", "SHA2-512"]
 }
 
 variable "tunnel1_phase2_dh_group_numbers" {
