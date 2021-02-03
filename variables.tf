@@ -59,6 +59,114 @@ variable "vpn_connection_static_routes_destinations" {
   default     = []
 }
 
+variable "tunnel1_dpd_timeout_action" {
+  description = "The action to take after dead peer detection (DPD) timeout occurs."
+  type        = string
+  default     = "restart"
+}
+
+variable "tunnel2_dpd_timeout_action" {
+  description = "The action to take after dead peer detection (DPD) timeout occurs."
+  type        = string
+  default     = "restart"
+}
+
+variable "tunnel1_dpd_timeout_seconds" {
+  description = "The number of seconds it takes for a dead peer detection (DPD) timeout to occur"
+  type        = number
+  default     = 180
+}
+
+variable "tunnel2_dpd_timeout_seconds" {
+  description = "The number of seconds it takes for a dead peer detection (DPD) timeout to occur"
+  type        = number
+  default     = 180
+}
+
+variable "tunnel1_ike_versions" {
+  description = "The Internet Key Exchange (IKE) negotiation process version"
+  type        = list(string)
+  default     = ["ikev1", "ikev2"]
+}
+
+variable "tunnel2_ike_versions" {
+  description = "The Internet Key Exchange (IKE) negotiation process version"
+  type        = list(string)
+  default     = ["ikev1", "ikev2"]
+}
+
+variable "tunnel1_phase1_dh_group_numbers" {
+  description = "The DH group numbers that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(number)
+  default     = [2, 14, 15, 16, 17, 18, 22, 23, 24]
+}
+
+variable "tunnel2_phase1_dh_group_numbers" {
+  description = "The DH group numbers that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(number)
+  default     = [2, 14, 15, 16, 17, 18, 22, 23, 24]
+}
+
+variable "tunnel1_phase1_encryption_algorithms" {
+  description = "The encryption algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["AES128", "AES256", "AES128-GCM-16", "AES256-GCM-16"]
+}
+
+variable "tunnel2_phase1_encryption_algorithms" {
+  description = "The encryption algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["AES128", "AES256", "AES128-GCM-16", "AES256-GCM-16"]
+}
+
+variable "tunnel1_phase1_integrity_algorithms" {
+  description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["SHA-1", "SHA2-256", "SHA2-384", "SHA2-512"]
+}
+
+variable "tunnel2_phase1_integrity_algorithms" {
+  description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["SHA-1", "SHA2-256", "SHA2-384", "SHA2-512"]
+}
+
+variable "tunnel1_phase2_dh_group_numbers" {
+  description = "The DH group numbers that are permitted for the VPN tunnel for phase 2 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(number)
+  default     = [2, 5, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+}
+
+variable "tunnel2_phase2_dh_group_numbers" {
+  description = "The DH group numbers that are permitted for the VPN tunnel for phase 2 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(number)
+  default     = [2, 5, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+}
+
+variable "tunnel1_phase2_encryption_algorithms" {
+  description = "The encryption algorithms that are permitted for the VPN tunnel for phase 2 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["AES128", "AES256", "AES128-GCM-16", "AES256-GCM-16"]
+}
+
+variable "tunnel2_phase2_encryption_algorithms" {
+  description = "The encryption algorithms that are permitted for the VPN tunnel for phase 2 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["AES128", "AES256", "AES128-GCM-16", "AES256-GCM-16"]
+}
+
+variable "tunnel1_phase2_integrity_algorithms" {
+  description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["SHA1", "SHA2-256", "SHA2-384", "SHA2-512"]
+}
+
+variable "tunnel2_phase2_integrity_algorithms" {
+  description = "The integrity algorithms that are permitted for the VPN tunnel for phase 1 of the IKE negotiations. You can specify one or more of the default values."
+  type        = list(string)
+  default     = ["SHA1", "SHA2-256", "SHA2-384", "SHA2-512"]
+}
+
 variable "tunnel1_inside_cidr" {
   description = "The CIDR block of the inside IP addresses for the first VPN tunnel."
   type        = string

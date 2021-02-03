@@ -26,6 +26,30 @@ resource "aws_vpn_connection" "default" {
 
   static_routes_only = var.vpn_connection_static_routes_only
 
+  tunnel1_dpd_timeout_action  = var.tunnel1_dpd_timeout_action
+  tunnel1_dpd_timeout_seconds = var.tunnel1_dpd_timeout_seconds
+  tunnel1_ike_versions        = var.tunnel1_ike_versions
+
+  tunnel1_phase1_dh_group_numbers      = var.tunnel1_phase1_dh_group_numbers
+  tunnel1_phase1_encryption_algorithms = var.tunnel1_phase1_encryption_algorithms
+  tunnel1_phase1_integrity_algorithms  = var.tunnel1_phase1_integrity_algorithms
+
+  tunnel1_phase2_dh_group_numbers      = var.tunnel1_phase2_dh_group_numbers
+  tunnel1_phase2_encryption_algorithms = var.tunnel1_phase2_encryption_algorithms
+  tunnel1_phase2_integrity_algorithms  = var.tunnel1_phase2_integrity_algorithms
+
+  tunnel2_dpd_timeout_action  = var.tunnel2_dpd_timeout_action
+  tunnel2_dpd_timeout_seconds = var.tunnel2_dpd_timeout_seconds
+  tunnel2_ike_versions        = var.tunnel2_ike_versions
+
+  tunnel2_phase1_dh_group_numbers      = var.tunnel2_phase1_dh_group_numbers
+  tunnel2_phase1_encryption_algorithms = var.tunnel2_phase1_encryption_algorithms
+  tunnel2_phase1_integrity_algorithms  = var.tunnel2_phase1_integrity_algorithms
+
+  tunnel2_phase2_dh_group_numbers      = var.tunnel2_phase2_dh_group_numbers
+  tunnel2_phase2_encryption_algorithms = var.tunnel2_phase2_encryption_algorithms
+  tunnel2_phase2_integrity_algorithms  = var.tunnel2_phase2_integrity_algorithms
+
   tags = merge(
     {
       "Name" = local.name_tag
